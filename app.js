@@ -46,16 +46,16 @@ app.get("/" , function(req,res){
   res.sendFile(__dirname+"/index.html");
 });
 app.get("/index.html" , function(req,res){
-  res.sendFile(__dirname+"\\index.html");
+  res.sendFile(__dirname+"/index.html");
 });
 app.get("/story.html" , function(req,res){
-  res.sendFile(__dirname+"\\story.html");
+  res.sendFile(__dirname+"/story.html");
 });
 app.get("/discord.html" , function(req,res){
-  res.sendFile(__dirname+"\\discord.html");
+  res.sendFile(__dirname+"/discord.html");
 });
 app.get("/education.html" , function(req,res){
-  res.sendFile(__dirname+"\\education.html");
+  res.sendFile(__dirname+"/education.html");
 });
 app.get("/story.html/:topic",function(req,res){
 var reqtitle =  _.lowerCase(req.params.topic);
