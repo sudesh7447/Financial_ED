@@ -1,5 +1,6 @@
 const express = require("express");
 const ejs = require("ejs");
+const path = require('path');
 const bodyParser = require("body-parser");
 const _ = require("lodash");
 const randomQuotes = require('random-quotes');
@@ -38,7 +39,7 @@ app.set('view engine', 'ejs');
   //
   var education = [education1 ,education2,education3,education4,education5,education6,education7,education8,education9];
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
 
 app.get("/" , function(req,res){
