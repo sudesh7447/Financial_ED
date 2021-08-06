@@ -1,0 +1,53 @@
+<%- include("partials/header.ejs") %>
+
+<!-- ======= Portfolio Details Section ======= -->
+<section id="portfolio-details" class="portfolio-details">
+  <div class="container">
+    <br>
+    <div class="row gy-4">
+
+      <div class="col-lg-8">
+        <header class="section-title">
+          <center>
+            <h2><%= Title %></h2>
+          </center>
+        </header>
+        <div class="section-bg">
+          <p> <%= Text %> </p>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="portfolio-info">
+          <h2><%= quote %></h2>
+        </div>
+        <div class="portfolio-description">
+          <h2>Write Your Thouhts</h2>
+          <form class="" action="/" method="post">
+            <div class="form-group">
+              <textarea name="name" rows="6" cols="40"></textarea>
+            <center>
+              <button type="Submit" class="btn btn-warning" name="button">Submit</button>
+              </center>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section><!-- End Portfolio Details Section -->
+
+</main><!-- End #main -->
+
+
+
+
+
+
+
+
+
+<%- include("partials/footer.ejs") %>
