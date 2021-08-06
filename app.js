@@ -3,7 +3,7 @@ const ejs = require("ejs");
 const path = require('path');
 const bodyParser = require("body-parser");
 const _ = require("lodash");
-const randomQuotes = require('random-quotes');
+
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -94,7 +94,7 @@ for(let i = 0;i<education.length;i++){
   console.log(storetitle);
   console.log(reqtitle);
   if(storetitle === reqtitle ){
-      var q = randomQuotes([count=1]);
+    
     res.render("story1" , {Title:education[i].title , Text:education[i].body  });
     check = 1;
   }
