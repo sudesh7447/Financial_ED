@@ -71,7 +71,7 @@ for(let i = 0;i<story.length;i++){
   console.log(storetitle);
   console.log(reqtitle);
   if(storetitle === reqtitle ){
-    var q = randomQuotes.random();
+   
     res.render("story1" , {Title:story[i].title , Text:story[i].body  });
     check = 1;
   }
@@ -89,8 +89,8 @@ for(let i = 0;i<story.length;i++){
 app.get("/education.html/:topic",function(req,res){
 var reqtitle =  _.lowerCase(req.params.topic);
 let check = 0;
-for(let i = 0;i<story.length;i++){
-  var storetitle = _.lowerCase(story[i].title);
+for(let i = 0;i<education.length;i++){
+  var storetitle = _.lowerCase(education[i].title);
   console.log(storetitle);
   console.log(reqtitle);
   if(storetitle === reqtitle ){
