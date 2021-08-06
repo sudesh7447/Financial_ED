@@ -95,7 +95,7 @@ for(let i = 0;i<story.length;i++){
   console.log(reqtitle);
   if(storetitle === reqtitle ){
       var q = randomQuotes([count=1]);
-    res.render("story1" , {Title:education[i].title , Text:education[i].body ,quote:q[0].body });
+    res.render("story1" , {Title:education[i].title , Text:education[i].body  });
     check = 1;
   }
 }
