@@ -51,6 +51,12 @@ app.get("/index.html" , function(req,res){
 app.get("/story.html" , function(req,res){
   res.sendFile(__dirname+"/story.html");
 });
+app.get("/test.html" , function(req,res){
+  res.sendFile(__dirname+"/test.html");
+});
+app.get("/video.html" , function(req,res){
+  res.sendFile(__dirname+"/video.html");
+});
 app.get("/discord.html" , function(req,res){
   res.sendFile(__dirname+"/discord.html");
 });
@@ -66,7 +72,7 @@ for(let i = 0;i<story.length;i++){
   console.log(reqtitle);
   if(storetitle === reqtitle ){
     var q = randomQuotes.random();
-    res.render("story1" , {Title:story[i].title , Text:story[i].body , quote:q.body });
+    res.render("story1" , {Title:story[i].title , Text:story[i].body  });
     check = 1;
   }
 }
