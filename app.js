@@ -71,8 +71,10 @@ for(let i = 0;i<story.length;i++){
   console.log(storetitle);
   console.log(reqtitle);
   if(storetitle === reqtitle ){
-   
-    res.render("story1" , {Title:story[i].title , Text:story[i].body  });
+       var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() ;
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    res.render("story1" , {Title:story[i].title , Text:story[i].body ,date:date ,time: time  });
     check = 1;
   }
 }
@@ -94,8 +96,10 @@ for(let i = 0;i<education.length;i++){
   console.log(storetitle);
   console.log(reqtitle);
   if(storetitle === reqtitle ){
-    
-    res.render("story1" , {Title:education[i].title , Text:education[i].body  });
+        var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() ;
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    res.render("story1" , {Title:education[i].title , Text:education[i].body,date:date ,time: time   });
     check = 1;
   }
 }
