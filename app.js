@@ -3,7 +3,7 @@ const ejs = require("ejs");
 const path = require('path');
 const bodyParser = require("body-parser");
 const _ = require("lodash");
-
+const mongoose = require("mongoose");
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -41,6 +41,17 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, "public")));
 
+mongoose.connect("mongodb+srv://admin_sud:8JJNA8nq78aQzR5@cluster0.n623r.mongodb.net/messageDB");
+
+var userSchema = new mongoose.Schema({
+  name : String ,
+    email: String,
+    subject: String ,
+    message: String
+
+    // whatever else
+});
+const User = new mongoose.model("User" , userSchema);
 
 app.get("/" , function(req,res){
   res.sendFile(__dirname+"/index.html");
@@ -108,7 +119,18 @@ var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
   }
   // console.log(req.params.topic);
 });
-
+app.post("/index.html" , function(req,res){
+  const newUser = new User({
+    name: req.body.name ,
+    email: req.body.email ,
+    subject: req.body.subject ,
+    message: req.body.message
+  });
+  newUser.save(function(err){
+      if(err){console.log(err);}
+      else{res.redirect("/");}
+    });
+})
 app.listen(process.env.PORT || 3000, function() {
   console.log("Server started on port 3000");
 });
